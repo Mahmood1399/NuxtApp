@@ -5,8 +5,8 @@
     </div>
     <nuxt-link to="/allnews" class="all-news">See All > </nuxt-link>
     <div class="col-lg-12" id="spliter"></div>
-      
-        <PostList :posts="loadedPosts" />
+
+    <PostList :posts="loadedPosts" />
 
     <div id="title">
       <h2 class="title">Sports</h2>
@@ -55,7 +55,7 @@
     <div class="row">
       <div class="col-lg-6">
         <OtherPost
-          id= 10
+          id="10"
           title="The First of Other Post"
           body="A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content,"
           img="/images/o2.jpg"
@@ -63,7 +63,7 @@
       </div>
       <div class="col-lg-6">
         <OtherPost
-          id= 11
+          id="11"
           title="The Second of Other Post"
           body="A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content,"
           img="/images/o1.jpg"
@@ -76,6 +76,8 @@
 <script>
 import PostList from '@/components/PostList'
 import OtherPost from '@/components/OtherPost'
+import data from '@/api/data.json'
+
 export default {
   name: 'IndexPage',
 
@@ -83,30 +85,11 @@ export default {
     PostList,
     OtherPost,
   },
-  data() {
-    return {
-     loadedPosts:[
-       {
-         id:1,
-         title:'The First Post',
-         body: 'A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options',
-         img: '/images/1.jpg'
-       },
-       {
-         id:2,
-         title:'The Second Post',
-         body: 'A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options',
-         img: '/images/2.jpg'
-       },
-       {
-         id: 3,
-         title:'The Third Post',
-         body: 'A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options',
-         img: '/images/lambo.jpg'
-       },
-     ], 
-    }
+
+  asyncData(context, callback) {
+    callback(null, { loadedPosts: data })
   },
+  
 }
 </script>
 
