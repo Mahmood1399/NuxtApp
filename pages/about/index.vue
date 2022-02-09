@@ -1,5 +1,11 @@
 <template>
-    <div>
-        <h3>about</h3>
-    </div>
+  <div>
+    <h3>about</h3>
+  </div>
 </template>
+
+<script>
+export default {
+  transition: 'bounce',
+}
+</script>

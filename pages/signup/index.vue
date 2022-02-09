@@ -1,15 +1,16 @@
 <template>
-    <div>
-        <Singup />
-    </div>
+  <div>
+    <Singup />
+  </div>
 </template>
 
 <script>
-import Singup from "@/components/auth/signup";
+import Singup from '@/components/auth/signup'
 export default {
-    layout:'login',
-    components: {
-        Singup,
-    }
+  layout: 'login',
+  transition: 'bounce',
+  components: {
+    Singup,
+  },
 }
 </script>

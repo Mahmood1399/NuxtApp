@@ -16,11 +16,11 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="card">
+      <div class="card" v-for="(post, index) in posts" :key="index">
         <div class="card-body">
           <li class="post">
-            <h3 class="title">{{ post.title }}</h3>
-            <p class="description">{{ post.body }}</p>
+            <h3 class="title">{{ post[0].title }}</h3>
+            <p class="description">{{ post[0].body }}</p>
           </li>
         </div>
       </div>
@@ -29,23 +29,36 @@
 </template>
 
 <script>
+import axios from '@nuxtjs/axios'
+
 export default {
-  async asyncData({ $axios }) {
-    const post = await $axios.$get(
-      'https://jsonplaceholder.typicode.com/posts/3'
-    )
+  transition: 'bounce',
+  asyncData({ $axios }) {
+    const post = $axios.$get('https://jsonplaceholder.typicode.com/posts')
     return { post }
   },
 
-  created() {
-    setTimeout(() => (this.alert = false), 1000)
-  },
+  //   asyncData({ $axios, error }) {
+  //     return axios.get('https://jsonplaceholder.typicode.com/posts')
+  //       .then((response) => {
+  //         console.log(response)
+  //         return {
+  //           posts: response.data,
+  //         }
+  //       })
+  //       .catch((e) => {
+  //         console.log('Error', e)
+  //       })
+  //   },
+  //   created() {
+  //     setTimeout(() => (this.alert = false), 1000)
+  //   },
 }
 </script>
 
 <style scoped>
 .title {
-  margin-top: 20px;
+  margin: top 20px;
 }
 
 .row {

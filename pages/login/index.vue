@@ -1,15 +1,16 @@
 <template>
-    <div>
-        <Auth />
-    </div>
+  <div>
+    <Auth />
+  </div>
 </template>
 
 <script>
-import Auth from "@/components/auth/login";
+import Auth from '@/components/auth/login'
 export default {
-    layout:'login',
-    components: {
-        Auth,
-    }
+  layout: 'login',
+  transition: 'bounce',
+  components: {
+    Auth,
+  },
 }
 </script>

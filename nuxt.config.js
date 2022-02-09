@@ -58,6 +58,6 @@ export default {
     build: {},
     loading: {
         color: 'blue',
-        height: '5px'
+        height: '5px',
     },
 }

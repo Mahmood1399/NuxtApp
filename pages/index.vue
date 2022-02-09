@@ -80,7 +80,7 @@ import data from '@/api/data.json'
 
 export default {
   name: 'IndexPage',
-
+  transition: 'bounce',
   components: {
     PostList,
     OtherPost,
@@ -89,7 +89,6 @@ export default {
   asyncData(context, callback) {
     callback(null, { loadedPosts: data })
   },
-  
 }
 </script>
 

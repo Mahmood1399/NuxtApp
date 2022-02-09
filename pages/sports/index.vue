@@ -1,15 +1,11 @@
 <template>
   <div>
-    <Economy />
+    <h3>The Sports page</h3>
   </div>
 </template>
 
 <script>
-import Economy from '@/components/economy/index'
 export default {
   transition: 'bounce',
-  components: {
-    Economy,
-  },
 }
 </script>

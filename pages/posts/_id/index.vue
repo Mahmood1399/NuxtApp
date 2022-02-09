@@ -13,6 +13,7 @@
 <script>
 import Post from '@/components/Post'
 export default {
+  transition: 'bounce',
   components: {
     Post,
   },
