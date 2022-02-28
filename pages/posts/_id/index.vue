@@ -1,21 +1,17 @@
 <template>
   <div>
-    <h3>hello: {{ $route.params.id }}</h3>
-    <!-- <Post
-      id="{{$route.params.id}}"
-      title="{{ $route.params.title }}"
-      body="{{ $route.params.body }}"
-      img="{{ $route.params.id }}"
-    /> -->
+    <h3>This is the details of post.</h3>
+    <PostDetails
+      :id="$route.params.id"
+      title="This is the post"
+      body="A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options."
+      :img="$route.params.img"
+    />
   </div>
 </template>
 
 <script>
-import Post from '@/components/Post'
 export default {
   transition: 'bounce',
-  components: {
-    Post,
-  },
 }
 </script>

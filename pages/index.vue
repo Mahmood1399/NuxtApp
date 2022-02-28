@@ -1,14 +1,6 @@
 <template>
   <div id="content">
     <div id="title">
-      <h2 class="title">Afghanistan</h2>
-    </div>
-    <nuxt-link to="/allnews" class="all-news">See All > </nuxt-link>
-    <div class="col-lg-12" id="spliter"></div>
-
-    <PostList :posts="loadedPosts" />
-
-    <div id="title">
       <h2 class="title">Sports</h2>
     </div>
     <div class="col-lg-12" id="spliter"></div>
@@ -76,7 +68,6 @@
 <script>
 import PostList from '@/components/PostList'
 import OtherPost from '@/components/OtherPost'
-import data from '@/api/data.json'
 
 export default {
   name: 'IndexPage',
@@ -86,8 +77,19 @@ export default {
     OtherPost,
   },
 
-  asyncData(context, callback) {
-    callback(null, { loadedPosts: data })
+  // asunc asyncData(context, callback) {
+  // setTimeout(() => {
+  // callback(null, { loadedPosts: data })
+  // }, 2000)
+  // },
+
+  created() {
+    this.$store.dispatch('setPosts')
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    },
   },
 }
 </script>

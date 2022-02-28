@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="container" v-if="$nuxt-isOffline">
-      <span>You are offline!</span>
-    </div>
     <NavBar />
     <div class="container">
       <Nuxt />

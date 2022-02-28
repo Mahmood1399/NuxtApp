@@ -12,9 +12,6 @@
         </span>
         <p class="card-text" style="display: inline-block">
           {{ body }}
-          <nuxt-link :to="`/postdetails/${id}`" v-if="body.length > 20"
-            >See more...</nuxt-link
-          >
         </p>
       </div>
     </div>
@@ -44,7 +41,7 @@ export default {
     img: {
       type: String,
       required: false,
-      default: '/images/1.jpg',
+      default: '/images/lambo.jpg',
     },
   },
 }
