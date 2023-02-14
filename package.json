@@ -31,7 +31,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^15.0.0",
+    "@commitlint/cli": "^17.4.3",
     "@commitlint/config-conventional": "^15.0.0",
     "@nuxtjs/stylelint-module": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
